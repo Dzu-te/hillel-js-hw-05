@@ -55,7 +55,6 @@ const counterFactory = (function () {
     value: function (n) {
       if (typeof n === 'number') {
         count = n;
-        return count;
       }
       return count;
     },
@@ -121,7 +120,7 @@ console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
 
 const list = [12, 23, 100, 34, 56, 9, 233]
 const myMax = (arr) => { return arr = Math.max.apply(null, list) }
-console.log('================START FIFTH TASK===================')
+console.log('================START FOURTH TASK===================')
 console.log(myMax(list)); // 233
 
 /*
@@ -130,8 +129,14 @@ console.log(myMax(list)); // 233
  * Створіть функцію myMul(a, b), яка буде множити числа а і b, повертаючи результат.
  */
 
-const myMul = (a, b) => { return a * b };
-console.log('================START SIXTH TASK===================')
+
+function multiply(a, b) {
+  return a * b
+}
+const myMul = (a, b) => { const fn = multiply.bind(null, a, b); return fn() };
+
+
+console.log('================START FIFTH TASK===================')
 console.log(myMul(2, 4));
 
 /*
@@ -140,7 +145,10 @@ console.log(myMul(2, 4));
  * Функція повертає результат обчислення.
  */
 
-const myDouble = (num => num * 2);
+function double(n) {
+  return n * 2
+}
+const myDouble = (n) => { return double.bind(null, n)() };
 
 console.log('================START SEVENTH TASK===================')
 console.log(myDouble(3)) // = myMul(2, 3) = 6
@@ -149,7 +157,8 @@ console.log(myDouble(5)) // = myMul(2, 5) = 10
 
 // Аналогічним чином створюємо функцію myTriple(n), яка потроює параметр, що приймає, повертаючи результат.
 
-const myTriple = (num => num * 3);
+const triple = (n) => n * 3;
+const myTriple = (n) => triple.bind(null, n)();
 
 console.log('================START EIGTH TASK===================')
 console.log(myTriple(3)) // = myMul(3, 3) = 9
