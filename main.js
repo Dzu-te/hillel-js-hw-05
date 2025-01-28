@@ -99,8 +99,22 @@ console.log(counterFactory.value()) // 201
  * console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
  */
 
+const power = (a, b) => {
+  if (b === 0) {
+    return 1;
+  }
+
+  if (b < 0) {
+    return power(a, b + 1) / a;
+  } else {
+    return power(a, b - 1) * a;
+  }
+};
+
 const myPrint = (a, b, res) => { return `${a}^${b} = ${res}` }
-const myPow = (a, b, myPrint) => { return myPrint(a, b, a ** b) };
+const myPow = (a, b, myPrint) => {
+  return myPrint(a, b, power(a, b));
+};
 
 console.log('================START THIRD TASK===================')
 console.log(myPow(3, 4, myPrint)) // 3^4=81
