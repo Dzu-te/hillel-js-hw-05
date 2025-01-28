@@ -133,8 +133,7 @@ console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
  */
 
 const list = [12, 23, 100, 34, 56, 9, 233]
-const myMax = (arr) => { return arr = Math.max.apply(null, list) }
-console.log('================START FOURTH TASK===================')
+const myMax = (arr) => Math.max.apply(null, list);
 console.log(myMax(list)); // 233
 
 /*
