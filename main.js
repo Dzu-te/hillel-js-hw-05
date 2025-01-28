@@ -144,13 +144,13 @@ console.log(myMax(list)); // 233
  */
 
 
-function multiply(a, b) {
-  return a * b
+function myMul(a, b) {
+  return a * b;
 }
-const myMul = (a, b) => { const fn = multiply.bind(null, a, b); return fn() };
 
 
-console.log('================START FIFTH TASK===================')
+
+console.log('================START FIFTH TASK===================');
 console.log(myMul(2, 4));
 
 /*
@@ -159,10 +159,8 @@ console.log(myMul(2, 4));
  * Функція повертає результат обчислення.
  */
 
-function double(n) {
-  return n * 2
-}
-const myDouble = (n) => { return double.bind(null, n)() };
+const myDouble = myMul.bind(null, 2);
+
 
 console.log('================START SEVENTH TASK===================')
 console.log(myDouble(3)) // = myMul(2, 3) = 6
@@ -171,8 +169,7 @@ console.log(myDouble(5)) // = myMul(2, 5) = 10
 
 // Аналогічним чином створюємо функцію myTriple(n), яка потроює параметр, що приймає, повертаючи результат.
 
-const triple = (n) => n * 3;
-const myTriple = (n) => triple.bind(null, n)();
+const myTriple = myMul.bind(null, 3);
 
 console.log('================START EIGTH TASK===================')
 console.log(myTriple(3)) // = myMul(3, 3) = 9
